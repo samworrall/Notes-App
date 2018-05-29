@@ -21,8 +21,8 @@
   }
 
   function CheckIfArgumentIsAString(){
-    var note = new Note(1)
-    if (typeof note.arguments !== 'string') {
+    var note = new Note('1')
+    if (note.argument_type !== 'string') {
       throw new Error("Argument is not a string")
     };
 

@@ -14,13 +14,22 @@
   };
 
   function ChecksIfNoteOnlyTakesOneArgument() {
-    var note = new Note('1', '2')
+    var note = new Note('1')
     if (note.arguments > 1) {
       throw new Error(`Incorrect number of arguments. Expected 1, got ${note.arguments}`)
     }
   }
 
+  function CheckIfArgumentIsAString(){
+    var note = new Note(1)
+    if (typeof note.arguments !== 'string') {
+      throw new Error("Argument is not a string")
+    };
+
+  };
+
   testExistenceOfNote();
   ChecksIfNoteTakesAnArgument();
   ChecksIfNoteOnlyTakesOneArgument();
+  CheckIfArgumentIsAString();
 })(this);

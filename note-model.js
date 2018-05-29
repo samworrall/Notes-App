@@ -1,7 +1,3 @@
-// function Note() {
-//
-// };
-//
-// Note.prototype.add = function() {
-//
-// };
+function Note() {
+  this.arguments = arguments.length
+};

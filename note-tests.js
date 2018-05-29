@@ -28,8 +28,9 @@
   };
 
   function checkIfTextIsSaved() {
-    var note = new Note('1')
-    if (note.text !== '1') {
+    var text = 'test'
+    var note = new Note(text)
+    if (note.text !== text) {
       throw new Error("Note text does not equal argument")
     };
   };

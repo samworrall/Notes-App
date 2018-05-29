@@ -8,9 +8,10 @@
 
   function checksIfNoteTakesAnArgument() {
     var note = new Note('1')
-    if (note.arguments === 0) {
-      throw new Error("Incorrect number of arguments. Expected 1, got 0")
-    };
+    assert.isTrue(note.arguments === 1, 'checksIfNoteTakesAnArgument')
+    // {
+    //   throw new Error("Incorrect number of arguments. Expected 1, got 0")
+    // };
   };
 
   function checksIfNoteOnlyTakesOneArgument() {

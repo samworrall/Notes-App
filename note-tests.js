@@ -6,30 +6,37 @@
     };
   };
 
-  function ChecksIfNoteTakesAnArgument() {
+  function checksIfNoteTakesAnArgument() {
     var note = new Note('1')
     if (note.arguments === 0) {
       throw new Error("Incorrect number of arguments. Expected 1, got 0")
     };
   };
 
-  function ChecksIfNoteOnlyTakesOneArgument() {
+  function checksIfNoteOnlyTakesOneArgument() {
     var note = new Note('1')
     if (note.arguments > 1) {
       throw new Error(`Incorrect number of arguments. Expected 1, got ${note.arguments}`)
-    }
-  }
+    };
+  };
 
-  function CheckIfArgumentIsAString(){
+  function checkIfArgumentIsAString() {
     var note = new Note('1')
     if (note.argument_type !== 'string') {
       throw new Error("Argument is not a string")
     };
+  };
 
+  function checkIfTextIsSaved() {
+    var note = new Note('1')
+    if (note.text !== '1') {
+      throw new Error("Note text does not equal argument")
+    };
   };
 
   testExistenceOfNote();
-  ChecksIfNoteTakesAnArgument();
-  ChecksIfNoteOnlyTakesOneArgument();
-  CheckIfArgumentIsAString();
+  checksIfNoteTakesAnArgument();
+  checksIfNoteOnlyTakesOneArgument();
+  checkIfArgumentIsAString();
+  checkIfTextIsSaved();
 })(this);

@@ -11,5 +11,9 @@
     return this.list
   }
 
+  NoteList.prototype.createNewNote = function(text) {
+    this.addNoteToList(new Note(text))
+  }
+
   exports.NoteList = NoteList;
 })(this);

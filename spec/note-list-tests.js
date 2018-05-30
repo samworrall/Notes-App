@@ -26,4 +26,10 @@
     notelist3.addNoteToList('test1')
     notelist3.addNoteToList('test2')
     assert.areEqual(notelist3.returnNotes(), ['test1', 'test2'])
+
+  describe('#createNewNote')
+    it('Creates a new note and adds it to the list')
+    notelist4 = new NoteList();
+    notelist4.createNewNote('placeholder');
+    assert.areEqual(notelist4.returnNotes(), [note])
 })(this);

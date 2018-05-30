@@ -45,5 +45,13 @@ var assert = {
     } else {
       throw new Error(`failed! ${condition} is not an array!`)
     };
+  },
+
+  isAnInstanceOf: function(instance, object) {
+    if (instance instanceof object) {
+      console.log(`%cpassed!`, 'color: green')
+    } else {
+      throw new Error(`failed! ${instance} is not an instance of ${object}!`)
+    };
   }
 };

@@ -1,38 +1,30 @@
 (function(exports) {
   var text = 'test'
-  function testExistenceOfNote() {
+  describe('Note')
+    it('Checks if Note exists')
     assert.exists(Note, 'testExistenceOfNote')
-  };
 
-  function checksIfNoteTakesAnArgument() {
+  describe('Arguments')
+    it('Checks if Note takes an argument')
     var note = new Note('1')
     assert.isTrue(note.arguments === 1, 'checksIfNoteTakesAnArgument')
-  };
 
-  function checksIfNoteOnlyTakesOneArgument() {
+    it('Checks if Note takes only one argument')
     var note = new Note('1')
     assert.isFalse(note.arguments > 1, 'checksIfNoteOnlyTakesOneArgument')
-  };
 
-  function checkIfArgumentIsAString() {
+    it('Checks if the argument is a string')
     var note = new Note('1')
     assert.isAString(note.argument, 'checkIfArgumentIsAString')
-  };
 
-  function checkIfTextIsSaved() {
+  describe('#text')
+    it('Checks if the text is saved')
     var note = new Note(text)
     assert.areEqual(note.text, text, 'checkIfTextIsSaved')
-  };
 
-  function testDisplayTextMethod() {
+  describe('#displayNote')
+    it('Displays the note text')
     var note = new Note(text)
     assert.areEqual(note.displayNote(), text, 'testDisplayTextMethod')
-  };
 
-  testExistenceOfNote();
-  checksIfNoteTakesAnArgument();
-  checksIfNoteOnlyTakesOneArgument();
-  checkIfArgumentIsAString();
-  checkIfTextIsSaved();
-  testDisplayTextMethod();
 })(this);

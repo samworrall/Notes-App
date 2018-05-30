@@ -7,5 +7,9 @@
     this.list.push(note);
   }
 
+  NoteList.prototype.returnNotes = function() {
+    return this.list
+  }
+
   exports.NoteList = NoteList;
 })(this);

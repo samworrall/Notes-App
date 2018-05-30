@@ -2,27 +2,28 @@
   var notelist = new NoteList()
   var note = new Note('placeholder')
 
-  function doesNoteListExist() {
-    assert.exists(notelist, 'doesNoteListExist')
-  };
+  describe('Notelist')
+    it('Checks if Notelist exists')
+    assert.exists(notelist)
 
-  function checkIfNotesAreStoredInAnArray() {
-    assert.isAnArray(notelist.list, 'checkIfNotesAreStoredInAnArray')
-  };
+  describe('#list')
+    it('Checks if the list is an array')
+    assert.isAnArray(notelist.list)
 
-  function testAddNoteToListFunction() {
+  describe('#addNoteToList')
+    it('increases the list array by 1')
     notelist.addNoteToList('test');
-    assert.isTrue(notelist.list.length === 1, 'testAddNoteToListFunction')
-  };
+    assert.isTrue(notelist.list.length === 1)
 
-  function testAddedNoteIsANote() {
+    it('Tests if the note is added to the list array')
     notelist2 = new NoteList();
     notelist2.addNoteToList(note);
-    assert.areEqual(notelist2.list[0], note, 'testAddedNoteIsANote')
-  };
+    assert.areEqual(notelist2.list[0], note)
 
-  doesNoteListExist();
-  checkIfNotesAreStoredInAnArray();
-  testAddNoteToListFunction();
-  testAddedNoteIsANote();
+  describe('#ReturnNotes')
+    it('Returns all the notes in the list')
+    notelist3 = new NoteList();
+    notelist3.addNoteToList('test1')
+    notelist3.addNoteToList('test2')
+    assert.areEqual(notelist3.returnNotes(), ['test1', 'test2'])
 })(this);

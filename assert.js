@@ -11,7 +11,7 @@ var assert = {
     if (!condition) {
       console.log(`%c${test} passed!`, 'color: green')
     } else {
-      throw new error(`${test} has failed! ${condition} is not falsey!`)
+      throw new Error(`${test} has failed! ${condition} is not falsey!`)
     };
   },
 
@@ -19,7 +19,7 @@ var assert = {
     if (typeof condition !== 'undefined') {
       console.log(`%c${test} passed!`, 'color: green')
     } else {
-      throw new error(`${test} has failed! ${condition} does not exist!`)
+      throw new Error(`${test} has failed! ${condition} does not exist!`)
     };
   },
 
@@ -27,7 +27,15 @@ var assert = {
     if (typeof condition === 'string') {
       console.log(`%c${test} passed!`, 'color: green')
     } else {
-      throw new error(`${test} has failed! ${condition} is not a string!`)
+      throw new Error(`${test} has failed! ${condition} is not a string!`)
+    };
+  },
+
+  areEqual: function(condition1, condition2, test) {
+    if (condition1 === condition2) {
+      console.log(`%c${test} passed!`, 'color: green')
+    } else {
+      throw new Error(`${test} has failed! ${condition1} does not equal ${condition2}`)
     };
   }
 };

@@ -21,20 +21,12 @@
 
   function checkIfTextIsSaved() {
     var note = new Note(text)
-    if (note.text !== text) {
-      throw new Error("Note text does not equal argument")
-    } else {
-      console.log(`%ccheckIfTextIsSaved passed!`, 'color: green')
-    };
+    assert.areEqual(note.text, text, 'checkIfTextIsSaved')
   };
 
   function testDisplayTextMethod() {
     var note = new Note(text)
-    if (note.displayNote() !== text) {
-      throw new Error("Note text does not equal argument")
-    } else {
-      console.log(`%ctestDisplayTextMethod passed!`, 'color: green')
-    };
+    assert.areEqual(note.displayNote(), text, 'testDisplayTextMethod')
   };
 
   testExistenceOfNote();

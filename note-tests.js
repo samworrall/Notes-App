@@ -1,38 +1,22 @@
 (function(exports) {
   var text = 'test'
   function testExistenceOfNote() {
-
-    if (typeof Note === 'undefined') {
-      throw new Error("Note is not a constructor function");
-    } else {
-      console.log(`%ctestExistenceOfNote passed!`, 'color: green')
-    };
+    assert.exists(Note, 'testExistenceOfNote')
   };
 
   function checksIfNoteTakesAnArgument() {
     var note = new Note('1')
     assert.isTrue(note.arguments === 1, 'checksIfNoteTakesAnArgument')
-    // {
-    //   throw new Error("Incorrect number of arguments. Expected 1, got 0")
-    // };
   };
 
   function checksIfNoteOnlyTakesOneArgument() {
     var note = new Note('1')
-    if (note.arguments > 1) {
-      throw new Error(`Incorrect number of arguments. Expected 1, got ${note.arguments}`)
-    } else {
-      console.log(`%cchecksIfNoteOnlyTakesOneArgument passed!`, 'color: green')
-    };
+    assert.isFalse(note.arguments > 1, 'checksIfNoteOnlyTakesOneArgument')
   };
 
   function checkIfArgumentIsAString() {
     var note = new Note('1')
-    if (note.argument_type !== 'string') {
-      throw new Error("Argument is not a string")
-    } else {
-      console.log(`%ccheckIfArgumentIsAString passed!`, 'color: green')
-    };
+    assert.isAString(note.argument, 'checkIfArgumentIsAString')
   };
 
   function checkIfTextIsSaved() {

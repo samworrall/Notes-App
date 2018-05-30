@@ -37,5 +37,13 @@ var assert = {
     } else {
       throw new Error(`${test} has failed! ${condition1} does not equal ${condition2}`)
     };
+  },
+
+  isAnArray: function(condition, test) {
+    if (Array.isArray(condition)) {
+      console.log(`%c${test} passed!`, 'color: green')
+    } else {
+      throw new Error(`${test} has failed! ${condition} is not an array!`)
+    };
   }
 };

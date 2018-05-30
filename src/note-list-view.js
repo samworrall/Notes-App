@@ -10,7 +10,7 @@
     allnotes.forEach(function(note) {
        html.push('<li><div>' + note.displayNote() + '</div></li>')
      })
-     return '<ul>' + html.join('') + '</ul>'
+     return html.length === 0 ? '' : '<ul>' + html.join('') + '</ul>'
    }
 
   exports.NoteListView = NoteListView;

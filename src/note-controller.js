@@ -9,18 +9,22 @@ changeContents(appDiv, 'howdy');
 
 (function(exports) {
   function NoteController(notelistmodel) {
-    notelistmodel.createNewNote('Favourite drink: seltzer')
-    var notelistview = new NoteListView(notelistmodel)
+    this.notelist = notelistmodel
+    this.notelistview = new NoteListView(this.notelist)
+
+    NoteController.prototype.addNote = function(text) {
+      this.notelist.createNewNote(text);
+    }
 
     NoteController.prototype.addToHTML = function() {
-      var htmlString = notelistview.notesToHTML();
+      var htmlString = this.notelistview.notesToHTML();
       changeContents(appDiv, htmlString);
     }
   }
   exports.NoteController = NoteController
 })(this);
 
-var note = new Note
 var listmodel = new NoteList
 controller = new NoteController(listmodel)
+controller.addNote('Favourite drink: seltzer');
 controller.addToHTML();

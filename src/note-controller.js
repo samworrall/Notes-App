@@ -1,14 +1,16 @@
-appDiv = document.getElementById('app')
-contents = appDiv.innerHTML
-
-function changeContents(contents, replacement) {
-  contents.innerHTML = replacement
+function GetElement(id, doc = document) {
+  appDiv = document.getElementById(id)
+  return appDiv
 }
 
-changeContents(appDiv, 'howdy');
+function changeContents(id, replacement, doc = document) {
+  GetElement(id).innerHTML = replacement
+}
 
-// (function(exports) {
-//   function NoteController(notelistmodel) {
+// changeContents('app', 'howdy');
+
+(function(exports) {
+  function NoteController(notelistmodel) {
 //     this.notelist = notelistmodel
 //     this.notelistview = new NoteListView(this.notelist)
 //
@@ -20,9 +22,9 @@ changeContents(appDiv, 'howdy');
 //       var htmlString = this.notelistview.notesToHTML();
 //       changeContents(appDiv, htmlString);
 //     }
-//   }
-//   exports.NoteController = NoteController
-// })(this);
+  }
+  exports.NoteController = NoteController
+})(this);
 //
 // var listmodel = new NoteList
 // controller = new NoteController(listmodel)

@@ -47,7 +47,6 @@
 
   describe('#addToHTML')
     it('Returns an html list string')
-    console.log(notecontroller.addToHTML('app', doc))
     assert.areEqual(notecontroller.addToHTML('app', doc), '<ul><li><div>test</div></li></ul>')
 
 })(this);

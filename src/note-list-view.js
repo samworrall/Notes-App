@@ -8,7 +8,7 @@
     var allnotes = this.notelist.returnNotes()
     var html = []
     allnotes.forEach(function(note) {
-       html.push('<li><div>' + note.displayNote() + '</div></li>')
+       html.push('<li><div>' + note.displayNote().substring(0, 20) + '</div></li>')
      })
      return html.length === 0 ? '' : '<ul>' + html.join('') + '</ul>'
    }

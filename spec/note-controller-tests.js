@@ -1,6 +1,6 @@
 (function(exports) {
 
-  function Element() {
+  function ElementDouble() {
     this.text = 'hello'
   }
 
@@ -15,7 +15,7 @@
 
   DocumentDouble.prototype = {
     getElementById: function() {
-      return new Element()
+      return new ElementDouble()
     }
   }
 

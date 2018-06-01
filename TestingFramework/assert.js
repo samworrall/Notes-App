@@ -55,3 +55,13 @@ var assert = {
     };
   }
 };
+
+
+// function expect (value1) {
+//   return {
+//     toBe: function(value2) {
+//       value1 === value2
+//     }
+//   }
+// }
+// expect(1).toBe(1)
